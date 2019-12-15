@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Room</string>
+
+    <string-array name="roomsListArray">
+        <item>Confessions</item>
+        <item>Portfolio</item>
+        <item>Fresh New Kicks</item>
+        <item>Homies</item>
+    </string-array>
+
+    <string name="roomName">Example Room</string>
+
+</resources>
