@@ -8,4 +8,22 @@
 
     tools:context=".Walls">
 
+
+    <GridView
+        android:id="@+id/wallsList"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:numColumns="2"
+
+        android:listSelector="#F1E1E1"
+
+        android:horizontalSpacing="20dp"
+        android:verticalSpacing="20dp">
+
+
+    </GridView>
+
+
 </LinearLayout>

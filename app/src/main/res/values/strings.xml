@@ -8,6 +8,13 @@
         <item>Homies</item>
     </string-array>
 
+    <string-array name="wallsListArray">
+        <item>North</item>
+        <item>East</item>
+        <item>West</item>
+        <item>South</item>
+    </string-array>
+
     <string name="roomName">Example Room</string>
 
 </resources>
