@@ -7,6 +7,8 @@
         <item>Fresh New Kicks</item>
         <item>Homies</item>
     </string-array>
+    <string name="roomName">Example Room</string>
+
 
     <string-array name="wallsListArray">
         <item>North</item>
@@ -14,7 +16,6 @@
         <item>West</item>
         <item>South</item>
     </string-array>
-
-    <string name="roomName">Example Room</string>
+    <string name="wallName">Example Wall</string>
 
 </resources>
