@@ -10,16 +10,16 @@ import android.widget.TextView;
 
 public class RoomAdapter extends BaseAdapter {
 
-    int[] roomAdapterIcons;
+    int[] icons;
     String[] roomListData;
     Context room;
 
     private LayoutInflater RoomListViewInflater;
 
-    RoomAdapter(Context room, String[] roomListData, int[] roomAdapterIcons){
+    RoomAdapter(Context room, String[] roomListData, int[] icons ){
         this.room = room;
         this.roomListData = roomListData;
-        this.roomAdapterIcons = roomAdapterIcons;
+        this.icons= icons;
     }
 
 
@@ -48,9 +48,9 @@ public class RoomAdapter extends BaseAdapter {
         }
 
         ImageView icon = (ImageView) CreatedListView.findViewById(R.id.roomIcon);
-        TextView roomName = (TextView) CreatedListView.findViewById(R.id.roomName);
+        TextView roomName = CreatedListView.findViewById(R.id.roomName);
 
-        icon.setImageResource(roomAdapterIcons[position]);
+        icon.setImageResource(icons[position]);
         roomName.setText(roomListData[position]);
 
         return CreatedListView;

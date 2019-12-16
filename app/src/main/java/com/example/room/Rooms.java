@@ -9,7 +9,7 @@ public class Rooms extends AppCompatActivity {
 
     private ListView roomsListView;
     private String[] roomsListData;
-    private int[] roomIcons = {R.drawable.door,R.drawable.curriculum,R.drawable.shop,R.drawable.friends};
+    private int[] icons = {R.drawable.door,R.drawable.curriculum,R.drawable.shop,R.drawable.friends};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class Rooms extends AppCompatActivity {
         roomsListView = (ListView)findViewById(R.id.roomsList);
         roomsListData = getResources().getStringArray(R.array.roomsListArray);
 
-        RoomAdapter roomBridge = new RoomAdapter(this,roomsListData, roomIcons);
+        RoomAdapter roomBridge = new RoomAdapter(this,roomsListData,icons);
         roomsListView.setAdapter(roomBridge);
     }
 }

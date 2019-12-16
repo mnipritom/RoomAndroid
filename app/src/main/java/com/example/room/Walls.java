@@ -9,7 +9,6 @@ public class Walls extends AppCompatActivity {
 
     private GridView wallsGridView;
     private String[] wallsListData;
-    private int wallIcons[] = {R.drawable.walls};
 
 
     @Override
@@ -19,8 +18,5 @@ public class Walls extends AppCompatActivity {
 
         wallsGridView = (GridView)findViewById(R.id.wallsList);
         wallsListData = getResources().getStringArray(R.array.wallsListArray);
-
-        WallAdapter wallBridge = new WallAdapter(this,wallsListData,wallIcons);
-        wallsGridView.setAdapter(wallBridge);
     }
 }
