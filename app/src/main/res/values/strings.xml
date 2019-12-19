@@ -10,4 +10,13 @@
 
     <string name="roomName">Example Room</string>
 
+    <string-array name="wallsGridArray">
+        <item>North</item>
+        <item>East</item>
+        <item>West</item>
+        <item>South</item>
+    </string-array>
+
+    <string name="wallName">Example Wall</string>
+
 </resources>

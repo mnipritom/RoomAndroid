@@ -11,7 +11,9 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Notes"></activity>
         <activity android:name=".Boards" />
-        <activity android:name=".Walls" />
+        <activity android:name=".Walls">
+
+        </activity>
         <activity android:name=".Rooms">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
