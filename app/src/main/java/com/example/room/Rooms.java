@@ -2,6 +2,7 @@ package com.example.room;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 
@@ -21,5 +22,13 @@ public class Rooms extends AppCompatActivity {
 
         RoomAdapter roomBridge = new RoomAdapter(this,roomsListData,icons);
         roomsListView.setAdapter(roomBridge);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+        Intent intent = new Intent(Rooms.this,Boards.class);
+        startActivity(intent);
     }
 }

@@ -2,6 +2,7 @@ package com.example.room;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.GridView;
 
@@ -21,5 +22,13 @@ public class Walls extends AppCompatActivity {
 
         WallAdapter wallBridge = new WallAdapter(this, wallsGridData,icons);
         wallsGridView.setAdapter(wallBridge);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+        Intent intent = new Intent(Walls.this,Rooms.class);
+        startActivity(intent);
     }
 }

@@ -8,7 +8,7 @@
         <item>Homies</item>
     </string-array>
 
-    <string name="roomName">Example Room</string>
+    <string name="roomName">Choose a Room</string>
 
     <string-array name="wallsGridArray">
         <item>North</item>
@@ -17,6 +17,14 @@
         <item>South</item>
     </string-array>
 
-    <string name="wallName">Example Wall</string>
+    <string name="wallName">Choose a Wall</string>
+
+    <string-array name="boradListArray">
+        <item>Board 1</item>
+        <item>Board 2</item>
+
+    </string-array>
+
+    <string name="boardName">Choose a board</string>
 
 </resources>
