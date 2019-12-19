@@ -27,4 +27,20 @@
 
     <string name="boardName">Choose a board</string>
 
+    <string-array name="notesHeadings">
+        <item>To Cindy</item>
+        <item>Bloody Valentina</item>
+        <item>"My wife is sleeping"</item>
+        <item>To 雅娜</item>
+    </string-array>
+
+    <string-array name="notesParagraphs">
+        <item>Once in every thousand years, the stars perfectly align. And an absolute idiot is born.\nHappy birthday... bitch!</item>
+        <item>It was valentines day, and she was on her period.</item>
+        <item>There was a short story writing competition in Britain where the participants had to write\nabout their significant other that expressed peace, love and calmness.\n\nThis heading was the winning entry.</item>
+        <item>你说：世上无难事，只怕有心人\n我有怕在我心里，所以不来你面前。</item>
+    </string-array>
+
+    <string name="noteName">Choose a Note</string>
+
 </resources>

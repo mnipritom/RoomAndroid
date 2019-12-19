@@ -28,7 +28,7 @@ public class Rooms extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         finish();
-        Intent intent = new Intent(Rooms.this,Boards.class);
+        Intent intent = new Intent(Rooms.this,Notes.class);
         startActivity(intent);
     }
 }
