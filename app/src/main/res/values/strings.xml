@@ -16,7 +16,15 @@
         <item>South</item>
     </string-array>
 
+    <string-array name="wallsGridArray_Diary">
+        <item>Author</item>
+        <item>Big Bang</item>
+        <item>Mid Life Crisis</item>
+        <item>Final Testimony</item>
+    </string-array>
+
     <string name="wallName">Choose a Wall</string>
+    <string name="wallName_chapters">Choose a Chapter</string>
 
     <string-array name="boradListArray">
         <item>Board 1</item>

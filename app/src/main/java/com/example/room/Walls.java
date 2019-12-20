@@ -5,23 +5,62 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.GridView;
+import android.widget.TextView;
 
 public class Walls extends AppCompatActivity {
 
     private GridView wallsGridView;
     private String[] wallsGridData;
-    private int[] icons = {R.drawable.walls,R.drawable.walls,R.drawable.walls,R.drawable.walls};
+    private int[] icons = {};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.walls);
 
-        wallsGridView = (GridView) findViewById(R.id.wallsGrid);
-        wallsGridData = getResources().getStringArray(R.array.wallsGridArray);
+        Bundle receivedData = getIntent().getExtras();
 
-        WallAdapter wallBridge = new WallAdapter(this, wallsGridData,icons);
-        wallsGridView.setAdapter(wallBridge);
+        int roomNumber = receivedData.getInt("selectedRoomNumber");
+
+        if(roomNumber == 0){
+
+            setContentView(R.layout.walls);
+
+            wallsGridView = (GridView) findViewById(R.id.wallsGrid);
+            wallsGridData = getResources().getStringArray(R.array.wallsGridArray);
+
+            icons = new int[]{R.drawable.walls, R.drawable.walls, R.drawable.walls, R.drawable.walls};
+
+            WallAdapter wallBridge = new WallAdapter(this, wallsGridData,icons);
+            wallsGridView.setAdapter(wallBridge);
+
+        }
+        else if(roomNumber == 1){
+
+            setContentView(R.layout.walls_diary_chapters);
+
+            wallsGridView = (GridView) findViewById(R.id.wallsGrid);
+            wallsGridData = getResources().getStringArray(R.array.wallsGridArray_Diary);
+
+            icons = new int[]{R.drawable.friends, R.drawable.family, R.drawable.depression, R.drawable.feather};
+
+            WallAdapter wallBridge = new WallAdapter(this, wallsGridData,icons);
+            wallsGridView.setAdapter(wallBridge);
+
+        }
+        else{
+
+            setContentView(R.layout.walls_diary_chapters);
+
+            wallsGridView = (GridView) findViewById(R.id.wallsGrid);
+            wallsGridData = getResources().getStringArray(R.array.wallsGridArray);
+
+            icons = new int[]{R.drawable.friends, R.drawable.family, R.drawable.depression, R.drawable.feather};
+
+            WallAdapter wallBridge = new WallAdapter(this, wallsGridData,icons);
+            wallsGridView.setAdapter(wallBridge);
+
+        }
+
     }
 
     @Override

@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 public class Rooms extends AppCompatActivity {
@@ -22,6 +24,19 @@ public class Rooms extends AppCompatActivity {
 
         RoomAdapter roomBridge = new RoomAdapter(this,roomsListData,icons);
         roomsListView.setAdapter(roomBridge);
+
+        roomsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                finish();
+
+                Intent enterRoom = new Intent(Rooms.this,Walls.class);
+                enterRoom.putExtra("selectedRoomNumber",position);
+
+                startActivity(enterRoom);
+
+            }
+        });
     }
 
     @Override
