@@ -10,7 +10,7 @@ public class Rooms extends AppCompatActivity {
 
     private ListView roomsListView;
     private String[] roomsListData;
-    private int[] icons = {R.drawable.door,R.drawable.curriculum,R.drawable.shop,R.drawable.friends};
+    private int[] icons = {R.drawable.diary,R.drawable.curriculum,R.drawable.shop};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

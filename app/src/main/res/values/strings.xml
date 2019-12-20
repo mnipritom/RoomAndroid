@@ -2,10 +2,9 @@
     <string name="app_name">Room</string>
 
     <string-array name="roomsListArray">
-        <item>Confessions</item>
+        <item>Dear Diary</item>
         <item>Portfolio</item>
         <item>Fresh New Kicks</item>
-        <item>Homies</item>
     </string-array>
 
     <string name="roomName">Choose a Room</string>
