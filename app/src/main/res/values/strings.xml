@@ -2,8 +2,8 @@
     <string name="app_name">Room</string>
 
     <string-array name="roomsListArray">
+        <item>Room</item>
         <item>Dear Diary</item>
-        <item>Portfolio</item>
         <item>Fresh New Kicks</item>
     </string-array>
 
