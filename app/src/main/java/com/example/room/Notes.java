@@ -23,14 +23,41 @@ public class Notes extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.notes);
 
-        populateNotes();
+        Bundle receivedData = getIntent().getExtras();
 
-        noteXView =(ExpandableListView) findViewById(R.id.notesXList);
+        int currentRoomNumber = receivedData.getInt("currentRoomNumber");
+        int currentWallNumber = receivedData.getInt("currentWallNumber");
+        int currentBoardNumber = receivedData.getInt("selectedBoardNumber");
 
-        noteBridge = new NotesAdapter(this,notesHeadersData,notesContentData);
-        noteXView.setAdapter(noteBridge);
+        if(currentRoomNumber == 0){
+            if(currentWallNumber == 0 || currentWallNumber == 2 || currentWallNumber == 3){
+                if(currentBoardNumber == 0 || currentBoardNumber == 1){
+                    setContentView(R.layout.no_content_view);
+                }
+            }
+            else{
+                if(currentBoardNumber == 1){
+                    setContentView(R.layout.notes);
+
+                    populateNotes();
+
+                    noteXView =(ExpandableListView) findViewById(R.id.notesXList);
+
+                    noteBridge = new NotesAdapter(this,notesHeadersData,notesContentData);
+                    noteXView.setAdapter(noteBridge);
+                }
+
+            }
+        }
+        if(currentRoomNumber == 1){
+            //Dear Diary note view
+        }
+        else{
+            //Shop note view
+        }
+
+
 
 
     }
@@ -57,8 +84,6 @@ public class Notes extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         finish();
-        Intent intent = new Intent(Notes.this,Boards.class);
-        startActivity(intent);
     }
 
 }

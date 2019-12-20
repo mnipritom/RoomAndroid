@@ -23,16 +23,34 @@
         <item>Final Testimony</item>
     </string-array>
 
+    <string-array name="wallsGridArray_Shop">
+        <item>Sports</item>
+        <item>Beachwear</item>
+        <item>Casual</item>
+        <item>Formal</item>
+    </string-array>
+
     <string name="wallName">Choose a Wall</string>
     <string name="wallName_chapters">Choose a Chapter</string>
+    <string name="wallName_categories">Choose a Category</string>
 
-    <string-array name="boradListArray">
+    <string-array name="boardListArray">
         <item>Board 1</item>
         <item>Board 2</item>
+    </string-array>
 
+    <string-array name="boardListArray_Author">
+        <item>Bio</item>
+        <item>Contact</item>
+    </string-array>
+
+    <string-array name="boardListArray_Room_EastWall">
+        <item>Black Board</item>
+        <item>Confessions</item>
     </string-array>
 
     <string name="boardName">Choose a board</string>
+    <string name="boardName_Author">Information provided by author</string>
 
     <string-array name="notesHeadings">
         <item>To Cindy</item>
@@ -49,5 +67,7 @@
     </string-array>
 
     <string name="noteName">Choose a Note</string>
+
+    <string name="noContentText">没有内容</string>
 
 </resources>

@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
 
@@ -19,7 +21,7 @@ public class Walls extends AppCompatActivity {
 
         Bundle receivedData = getIntent().getExtras();
 
-        int roomNumber = receivedData.getInt("selectedRoomNumber");
+        final int roomNumber = receivedData.getInt("selectedRoomNumber");
 
         if(roomNumber == 0){
 
@@ -32,6 +34,21 @@ public class Walls extends AppCompatActivity {
 
             WallAdapter wallBridge = new WallAdapter(this, wallsGridData,icons);
             wallsGridView.setAdapter(wallBridge);
+
+            wallsGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+
+                    finish();
+
+                    Intent pickWall = new Intent(Walls.this,Boards.class);
+                    pickWall.putExtra("selectedWallNumber",position);
+                    pickWall.putExtra("currentRoomNumber",roomNumber);
+
+                    startActivity(pickWall);
+
+                }
+            });
 
         }
         else if(roomNumber == 1){
@@ -46,18 +63,48 @@ public class Walls extends AppCompatActivity {
             WallAdapter wallBridge = new WallAdapter(this, wallsGridData,icons);
             wallsGridView.setAdapter(wallBridge);
 
+            wallsGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+
+                    finish();
+
+                    Intent pickWall = new Intent(Walls.this,Boards.class);
+                    pickWall.putExtra("selectedWallNumber",position);
+                    pickWall.putExtra("currentRoomNumber",roomNumber);
+
+                    startActivity(pickWall);
+
+                }
+            });
+
         }
         else{
 
-            setContentView(R.layout.walls_diary_chapters);
+            setContentView(R.layout.walls_shoe_categories);
 
             wallsGridView = (GridView) findViewById(R.id.wallsGrid);
-            wallsGridData = getResources().getStringArray(R.array.wallsGridArray);
+            wallsGridData = getResources().getStringArray(R.array.wallsGridArray_Shop);
 
-            icons = new int[]{R.drawable.friends, R.drawable.family, R.drawable.depression, R.drawable.feather};
+            icons = new int[]{R.drawable.sports, R.drawable.slippers, R.drawable.casual, R.drawable.formal};
 
             WallAdapter wallBridge = new WallAdapter(this, wallsGridData,icons);
             wallsGridView.setAdapter(wallBridge);
+
+            wallsGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+
+                    finish();
+
+                    Intent pickWall = new Intent(Walls.this,Boards.class);
+                    pickWall.putExtra("selectedWallNumber",position);
+                    pickWall.putExtra("currentRoomNumber",roomNumber);
+
+                    startActivity(pickWall);
+
+                }
+            });
 
         }
 
@@ -67,7 +114,5 @@ public class Walls extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         finish();
-        Intent intent = new Intent(Walls.this,Rooms.class);
-        startActivity(intent);
     }
 }

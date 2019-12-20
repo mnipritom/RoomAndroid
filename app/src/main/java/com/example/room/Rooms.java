@@ -28,6 +28,7 @@ public class Rooms extends AppCompatActivity {
         roomsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+
                 finish();
 
                 Intent enterRoom = new Intent(Rooms.this,Walls.class);
@@ -43,7 +44,5 @@ public class Rooms extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         finish();
-        Intent intent = new Intent(Rooms.this,Notes.class);
-        startActivity(intent);
     }
 }
