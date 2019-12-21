@@ -9,6 +9,8 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
 
+import com.r0adkll.slidr.Slidr;
+
 public class Walls extends AppCompatActivity {
 
     private GridView wallsGridView;
@@ -18,6 +20,8 @@ public class Walls extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Slidr.attach(this);
 
         Bundle receivedData = getIntent().getExtras();
 
@@ -39,7 +43,7 @@ public class Walls extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
-                    finish();
+                    //finish();
 
                     Intent pickWall = new Intent(Walls.this,Boards.class);
                     pickWall.putExtra("selectedWallNumber",position);
@@ -67,7 +71,7 @@ public class Walls extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
-                    finish();
+                    //finish();
 
                     Intent pickWall = new Intent(Walls.this,Boards.class);
                     pickWall.putExtra("selectedWallNumber",position);
@@ -95,7 +99,7 @@ public class Walls extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
-                    finish();
+                    //finish();
 
                     Intent pickWall = new Intent(Walls.this,Boards.class);
                     pickWall.putExtra("selectedWallNumber",position);

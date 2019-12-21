@@ -29,7 +29,7 @@ public class Rooms extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
-                finish();
+                //finish();
 
                 Intent enterRoom = new Intent(Rooms.this,Walls.class);
                 enterRoom.putExtra("selectedRoomNumber",position);

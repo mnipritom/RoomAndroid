@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.r0adkll.slidr.Slidr;
+
 public class Boards extends AppCompatActivity {
 
     private ListView boardListView;
@@ -18,6 +20,8 @@ public class Boards extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Slidr.attach(this);
 
         Bundle receivedData = getIntent().getExtras();
 
@@ -42,7 +46,7 @@ public class Boards extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
-                        finish();
+                        //finish();
 
                         Intent pickBoard = new Intent(Boards.this,Notes.class);
                         pickBoard.putExtra("selectedBoardNumber",position);
@@ -67,7 +71,7 @@ public class Boards extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
-                        finish();
+                        //finish();
 
                         Intent pickBoard = new Intent(Boards.this,Notes.class);
                         pickBoard.putExtra("selectedBoardNumber",position);
@@ -97,7 +101,7 @@ public class Boards extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
-                        finish();
+                        //finish();
 
                         Intent pickBoard = new Intent(Boards.this,Notes.class);
                         pickBoard.putExtra("selectedBoardNumber",position);
@@ -125,7 +129,7 @@ public class Boards extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
-                        finish();
+                        //finish();
 
                         Intent pickBoard = new Intent(Boards.this,Notes.class);
                         pickBoard.putExtra("selectedBoardNumber",position);
@@ -153,7 +157,7 @@ public class Boards extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
-                        finish();
+                        //finish();
 
                         Intent pickBoard = new Intent(Boards.this,Notes.class);
                         pickBoard.putExtra("selectedBoardNumber",position);
@@ -181,7 +185,7 @@ public class Boards extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
-                        finish();
+                        //finish();
 
                         Intent pickBoard = new Intent(Boards.this,Notes.class);
                         pickBoard.putExtra("selectedBoardNumber",position);

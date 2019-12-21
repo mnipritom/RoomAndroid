@@ -10,17 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:theme="@style/AppTheme.SlidrActivityTheme"
             android:screenOrientation="portrait"
             android:name=".Notes">
 
         </activity>
         <activity
+            android:theme="@style/AppTheme.SlidrActivityTheme"
             android:screenOrientation="portrait"
             android:name=".Boards">
 
 
         </activity>
         <activity
+            android:theme="@style/AppTheme.SlidrActivityTheme"
             android:screenOrientation="portrait"
             android:name=".Walls">
 
