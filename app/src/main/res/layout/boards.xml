@@ -45,6 +45,8 @@
 
         <TextView
 
+            android:id="@+id/boardStatus"
+
             android:text="@string/boardName"
 
             android:layout_width="wrap_content"

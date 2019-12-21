@@ -53,17 +53,47 @@ public class Notes extends AppCompatActivity {
                     noteBridge = new NotesAdapter(this,notesHeadersData,notesContentData);
                     noteXView.setAdapter(noteBridge);
                 }
+                else{
+                    setContentView(R.layout.no_content_view);
+                }
 
             }
         }
         if(currentRoomNumber == 1){
-            //Dear Diary note view
-        }
-        else{
-            //Shop note view
-        }
 
+            if(currentWallNumber == 1 || currentWallNumber == 2 || currentWallNumber == 1){
+                if(currentBoardNumber == 0 || currentBoardNumber == 1){
+                    setContentView(R.layout.no_content_view);
+                }
+            }
+            else{
 
+                if(currentBoardNumber == 0 || currentBoardNumber ==1){
+                    setContentView(R.layout.no_content_view);
+                }
+            }
+
+        }
+        if(currentRoomNumber == 2){
+
+            if(currentWallNumber == 0){
+
+                if(currentBoardNumber == 0){
+                    setContentView(R.layout.notes_shop_products);
+                }
+                else{
+
+                    setContentView(R.layout.no_content_view);
+                }
+            }
+            else if(currentWallNumber == 1){
+                if(currentBoardNumber == 0 || currentBoardNumber ==1){
+                    setContentView(R.layout.no_content_view);
+                }
+
+            }
+
+        }
 
 
     }

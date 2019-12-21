@@ -49,6 +49,16 @@
         <item>Confessions</item>
     </string-array>
 
+    <string-array name="boardListArray_Shop">
+        <item>Regular</item>
+        <item>Designer</item>
+    </string-array>
+
+    <string-array name="boardListArray_Shop_Beach">
+        <item>Casual</item>
+        <item>Sports</item>
+    </string-array>
+
     <string name="boardName">Choose a board</string>
     <string name="boardName_Author">Information provided by author</string>
 
@@ -69,5 +79,7 @@
     <string name="noteName">Choose a Note</string>
 
     <string name="noContentText">没有内容</string>
+
+    <string name="productSample">2013 Nike Air Jordan</string>
 
 </resources>

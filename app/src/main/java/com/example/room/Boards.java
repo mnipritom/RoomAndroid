@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.r0adkll.slidr.Slidr;
 
@@ -206,6 +207,76 @@ public class Boards extends AppCompatActivity {
 
             }
 
+
+        }
+        else{
+
+            setContentView(R.layout.boards);
+
+            if(wallNumber == 0) {
+
+                TextView BrandType = (TextView) findViewById(R.id.boardStatus);
+                BrandType.setText("Available brand categories");
+
+                boardListView = (ListView) findViewById(R.id.boardsList);
+                boardListData = getResources().getStringArray(R.array.boardListArray_Shop);
+
+                int[] icons = {R.drawable.nike, R.drawable.designer};
+
+                BoardAdapter boardBridge = new BoardAdapter(this, boardListData, icons);
+                boardListView.setAdapter(boardBridge);
+
+                boardListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+
+                        //finish();
+
+                        Intent pickBoard = new Intent(Boards.this, Notes.class);
+                        pickBoard.putExtra("selectedBoardNumber", position);
+                        pickBoard.putExtra("currentWallNumber", wallNumber);
+                        pickBoard.putExtra("currentRoomNumber", currentRoomNumber);
+
+                        startActivity(pickBoard);
+                        CustomIntent.customType(Boards.this, "left-to-right");
+                    }
+                });
+            }
+            else if(wallNumber == 1){
+
+                TextView BrandType = (TextView) findViewById(R.id.boardStatus);
+                BrandType.setText("Choose your style");
+
+                boardListView = (ListView) findViewById(R.id.boardsList);
+                boardListData = getResources().getStringArray(R.array.boardListArray_Shop_Beach);
+
+                int[] icons = {R.drawable.beach_casual, R.drawable.beach_sports};
+
+                BoardAdapter boardBridge = new BoardAdapter(this, boardListData, icons);
+                boardListView.setAdapter(boardBridge);
+
+                boardListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+
+                        //finish();
+
+                        Intent pickBoard = new Intent(Boards.this, Notes.class);
+                        pickBoard.putExtra("selectedBoardNumber", position);
+                        pickBoard.putExtra("currentWallNumber", wallNumber);
+                        pickBoard.putExtra("currentRoomNumber", currentRoomNumber);
+
+                        startActivity(pickBoard);
+                        CustomIntent.customType(Boards.this, "left-to-right");
+                    }
+                });
+
+            }
+            else{
+                setContentView(R.layout.no_content_view);
+                TextView noContentStatus = (TextView)findViewById(R.id.noContentMessage);
+                noContentStatus.setText("Brand types -> Products");
+            }
 
         }
 
