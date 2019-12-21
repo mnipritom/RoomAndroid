@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import maes.tech.intentanim.CustomIntent;
+
 public class Rooms extends AppCompatActivity {
 
     private ListView roomsListView;
@@ -17,6 +19,7 @@ public class Rooms extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.rooms);
 
         roomsListView = (ListView)findViewById(R.id.roomsList);
@@ -35,6 +38,7 @@ public class Rooms extends AppCompatActivity {
                 enterRoom.putExtra("selectedRoomNumber",position);
 
                 startActivity(enterRoom);
+                CustomIntent.customType(Rooms.this,"left-to-right");
 
             }
         });

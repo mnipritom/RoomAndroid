@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import com.r0adkll.slidr.Slidr;
 
+import maes.tech.intentanim.CustomIntent;
+
 public class Walls extends AppCompatActivity {
 
     private GridView wallsGridView;
@@ -50,6 +52,7 @@ public class Walls extends AppCompatActivity {
                     pickWall.putExtra("currentRoomNumber",roomNumber);
 
                     startActivity(pickWall);
+                    CustomIntent.customType(Walls.this,"left-to-right");
 
                 }
             });
@@ -78,6 +81,7 @@ public class Walls extends AppCompatActivity {
                     pickWall.putExtra("currentRoomNumber",roomNumber);
 
                     startActivity(pickWall);
+                    CustomIntent.customType(Walls.this,"left-to-right");
 
                 }
             });
@@ -106,6 +110,7 @@ public class Walls extends AppCompatActivity {
                     pickWall.putExtra("currentRoomNumber",roomNumber);
 
                     startActivity(pickWall);
+                    CustomIntent.customType(Walls.this,"left-to-right");
 
                 }
             });
@@ -118,5 +123,6 @@ public class Walls extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         finish();
+        CustomIntent.customType(Walls.this,"right-to-left");
     }
 }

@@ -10,6 +10,8 @@ import android.widget.ListView;
 
 import com.r0adkll.slidr.Slidr;
 
+import maes.tech.intentanim.CustomIntent;
+
 public class Boards extends AppCompatActivity {
 
     private ListView boardListView;
@@ -54,6 +56,7 @@ public class Boards extends AppCompatActivity {
                         pickBoard.putExtra("currentRoomNumber",currentRoomNumber);
 
                         startActivity(pickBoard);
+                        CustomIntent.customType(Boards.this,"left-to-right");
                     }
                 });
             }
@@ -79,6 +82,7 @@ public class Boards extends AppCompatActivity {
                         pickBoard.putExtra("currentRoomNumber",currentRoomNumber);
 
                         startActivity(pickBoard);
+                        CustomIntent.customType(Boards.this,"left-to-right");
                     }
                 });
             }
@@ -109,6 +113,7 @@ public class Boards extends AppCompatActivity {
                         pickBoard.putExtra("currentRoomNumber",currentRoomNumber);
 
                         startActivity(pickBoard);
+                        CustomIntent.customType(Boards.this,"left-to-right");
                     }
                 });
 
@@ -137,6 +142,7 @@ public class Boards extends AppCompatActivity {
                         pickBoard.putExtra("currentRoomNumber",currentRoomNumber);
 
                         startActivity(pickBoard);
+                        CustomIntent.customType(Boards.this,"left-to-right");
                     }
                 });
 
@@ -165,6 +171,7 @@ public class Boards extends AppCompatActivity {
                         pickBoard.putExtra("currentRoomNumber",currentRoomNumber);
 
                         startActivity(pickBoard);
+                        CustomIntent.customType(Boards.this,"left-to-right");
                     }
                 });
 
@@ -193,6 +200,7 @@ public class Boards extends AppCompatActivity {
                         pickBoard.putExtra("currentRoomNumber",currentRoomNumber);
 
                         startActivity(pickBoard);
+                        CustomIntent.customType(Boards.this,"left-to-right");
                     }
                 });
 
@@ -212,5 +220,6 @@ public class Boards extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         finish();
+        CustomIntent.customType(Boards.this,"right-to-left");
     }
 }

@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import maes.tech.intentanim.CustomIntent;
+
 public class Notes extends AppCompatActivity {
 
     private ExpandableListView noteXView;
@@ -88,6 +90,7 @@ public class Notes extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         finish();
+        CustomIntent.customType(Notes.this,"right-to-left");
     }
 
 }
