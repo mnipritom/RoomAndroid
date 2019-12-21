@@ -82,4 +82,12 @@
 
     <string name="productSample">2013 Nike Air Jordan</string>
 
+    <string name="title_activity_project_info">ProjectInfo</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="ProjectTitle">Skeuomorphic UX</string>
+    <string name="ProjectAuthor">那思路</string>
+    <string name="ProjectAuthorContact">MNIPritom</string>
+
 </resources>
