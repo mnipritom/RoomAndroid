@@ -10,7 +10,7 @@ import maes.tech.intentanim.CustomIntent;
 
 public class ProjectInfo extends AppCompatActivity {
 
-    private static int ProjectInfoDisplayTime = 5000;
+    private static int ProjectInfoDisplayTime = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +20,9 @@ public class ProjectInfo extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent WelcomeScreen = new Intent(ProjectInfo.this,Rooms.class);
-                startActivity(WelcomeScreen);
                 finish();
+                Intent WelcomeScreen = new Intent(ProjectInfo.this,DoorReg.class);
+                startActivity(WelcomeScreen);
                 CustomIntent.customType(ProjectInfo.this, "left-to-right");
             }
         },ProjectInfoDisplayTime);

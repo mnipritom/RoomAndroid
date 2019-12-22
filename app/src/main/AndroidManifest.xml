@@ -9,15 +9,9 @@
         android:roundIcon="@drawable/app_icon_final"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".ProjectInfo"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+
+
         <activity
             android:name=".Notes"
             android:screenOrientation="portrait"
@@ -32,6 +26,19 @@
             android:theme="@style/AppTheme.SlidrActivityTheme" />
         <activity
             android:name=".Rooms"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name=".DoorLogin"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.SlidrActivityTheme">
+
+        </activity>
+        <activity android:name=".DoorReg">
+
+        </activity>
+        <activity
+            android:name=".ProjectInfo"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+
+    android:weightSum="3"
+
+    android:padding="20dp"
+    android:layout_marginBottom="30dp"
+
+    android:gravity="center"
+    tools:context=".DoorReg">
+
+
+    <LinearLayout
+
+        android:gravity="center"
+
+        android:layout_weight="2"
+
+        android:layout_width="wrap_content"
+        android:layout_height="0dp">
+
+        <LinearLayout
+            android:layout_weight="3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+
+                android:id="@+id/logKey"
+
+                android:layout_gravity="center"
+
+                android:src="@drawable/door"
+                android:layout_width="50dp"
+                android:layout_height="50dp">
+
+            </ImageView>
+            <TextView
+
+                android:layout_gravity="center"
+
+                android:id="@+id/logStatus"
+
+                android:text="Login to enter"
+
+                android:layout_marginLeft="10dp"
+
+                android:textSize="25dp"
+                android:fontFamily="sans-serif-condensed"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_weight="1"
+
+        android:orientation="vertical"
+
+        android:layout_width="wrap_content"
+        android:layout_height="0dp">
+        <LinearLayout
+
+            android:weightSum="7"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <ImageView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/username">
+
+            </ImageView>
+            <EditText
+                android:id="@+id/username"
+
+                android:background="@color/customBackground"
+                android:hint="Username"
+                android:fontFamily="sans-serif-condensed"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+
+                android:textAlignment="center"
+
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+            </EditText>
+
+            <ImageView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/key">
+
+            </ImageView>
+
+            <EditText
+                android:id="@+id/password"
+
+                android:background="@color/customBackground"
+                android:hint="Password"
+                android:fontFamily="sans-serif-condensed"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+
+                android:textAlignment="center"
+
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+            </EditText>
+            <ImageView
+
+                android:onClick="checkLogin"
+
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/enter">
+
+            </ImageView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
