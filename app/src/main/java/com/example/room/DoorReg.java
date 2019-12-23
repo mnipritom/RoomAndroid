@@ -53,9 +53,25 @@ public class DoorReg extends AppCompatActivity {
         String username = user.getText().toString();
         String password = pass.getText().toString();
 
-        if(username.trim().equals("") || username.isEmpty() || password.trim().equals("") || password.isEmpty())//trim ignores spaces in front of strings
-        {
+        if(username.trim()== " " || username.isEmpty() || password.trim()== " " || password.isEmpty())//trim ignores spaces in front and at the trail of strings, it is supposed to see if the entry is empty string
+        {                                                                                               //not working, database is storing empty strings, even though fields are set to NOT NULL
+                                                                                                        //an empty string is still a string
+            logButton.setImageResource(R.drawable.exclamation);
             regStatus.setText("\uD83D\uDE1E Failed to register");
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    logButton.setImageResource(R.drawable.door);
+                    regStatus.setText("⬅️ Touch to log in");
+                }
+            },2000);
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    logButton.setImageResource(R.drawable.door);
+                    regStatus.setText("Register");
+                }
+            },2000);
         }
         else{
             entry.setName(username);

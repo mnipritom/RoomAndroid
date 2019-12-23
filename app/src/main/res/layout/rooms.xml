@@ -44,6 +44,8 @@
 
         <TextView
 
+            android:id="@+id/WelcomeUser"
+
             android:text="@string/roomName"
 
             android:layout_width="wrap_content"

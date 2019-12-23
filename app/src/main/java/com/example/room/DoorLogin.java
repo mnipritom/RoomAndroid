@@ -2,6 +2,8 @@ package com.example.room;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,16 +14,14 @@ import android.widget.TextView;
 
 import com.r0adkll.slidr.Slidr;
 
+import maes.tech.intentanim.CustomIntent;
+
 public class DoorLogin extends AppCompatActivity {
 
     UserDBHelper logAuthentication;
 
-
     private TextView logStatus;
     private ImageView logKey;
-
-    private String username;
-    private String password;
 
     private EditText user, pass;
     @Override
@@ -39,19 +39,37 @@ public class DoorLogin extends AppCompatActivity {
         logKey = (ImageView) findViewById(R.id.logKey);
 
         logAuthentication = new UserDBHelper(DoorLogin.this);
-        SQLiteDatabase record = logAuthentication.getReadableDatabase();
 
-        username = user.getText().toString();
-        password = pass.getText().toString();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                logKey.setImageResource(R.drawable.right_arrow);
+                logStatus.setText("Slide to register");
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        logKey.setImageResource(R.drawable.door);
+                        logStatus.setText("Login to enter");
+                    }
+                },2000);
+            }
+        },2000);
+
 
     }
     public void checkLogin(View view){
 
         int timeout = 2000;
 
-        Boolean result = false;
+        String username = user.getText().toString();//these two mafakin lines got me stuck for two fakin days
+        String password = pass.getText().toString();//always declaring strings whenever needed from now on, never using global variable
 
-        if(username.trim().equals("") || username.isEmpty() || password.trim().equals("") || password.isEmpty())//trim ignores spaces in front of strings
+        SQLiteDatabase record = logAuthentication.getReadableDatabase();
+        Cursor cursor = record.rawQuery("SELECT * FROM users WHERE username=? and password=?", new String[]{username,password});
+        //Boolean result = false;
+
+        if( username.trim().equals(" ") || username.isEmpty() || password.trim().isEmpty() || password.isEmpty() )//trim ignores spaces in front of strings
         {
             logStatus.setText("\uD83D\uDE1EFailed to login");
 
@@ -62,19 +80,18 @@ public class DoorLogin extends AppCompatActivity {
                     logStatus.setText("Slide to register");
                 }
             },timeout);
-
         }
         else{
-            result = logAuthentication.findKey(username,password);
-            if(result==true ){
-                //Intent finishRegAndLog = new Intent(DoorLogin.this,Rooms.class);
-                //finishRegAndLog.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);//destroys reg and log activities and clears stack
-                //finishRegAndLog.putExtra("whoToReceive",username);
-                //startActivity(finishRegAndLog);
-                logStatus.setText("logged in");
+            if(cursor.getCount()!=0){
+                //finish();
+                Intent finishLog = new Intent(DoorLogin.this,Rooms.class);
+                finishLog.putExtra("whoToReceive",username);
+                this.finishAffinity();
+                startActivity(finishLog);
+                CustomIntent.customType(DoorLogin.this,"left-to-right");
             }
             else{
-                logStatus.setText("Failed");
+                logStatus.setText("\uD83D\uDE1EFailed to login");
 
                 new Handler().postDelayed(new Runnable() {
                     @Override
@@ -83,12 +100,33 @@ public class DoorLogin extends AppCompatActivity {
                         logStatus.setText("Slide to register");
                     }
                 },timeout);
-
             }
         }
 
+        /*else{
+            result = logAuthentication.findKey(username,password);
+                if(result==true ){
+                    Intent finishRegAndLog = new Intent(DoorLogin.this,Rooms.class);
+                    finishRegAndLog.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);//destroys reg and log activities and clears stack
+                    finishRegAndLog.putExtra("whoToReceive",username);
+                    startActivity(finishRegAndLog);
+                }
+                else{
+                    logStatus.setText("Failed");
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            logKey.setImageResource(R.drawable.right_arrow);
+                            logStatus.setText("Slide to register");
+                        }
+                    },timeout);
+
+                }
+
+
+        }*/
+
     }
-
-
 
 }

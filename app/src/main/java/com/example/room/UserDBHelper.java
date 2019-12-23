@@ -65,30 +65,27 @@ public class UserDBHelper extends SQLiteOpenHelper {
 
     }
 
-    public Boolean findKey(String username, String password){
+    /*public Boolean findKey(String username, String password){
 
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
 
         Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM "+DB_TABLE_NAME,null);
-        Boolean result = false;
+        Boolean result = true;
 
         if(cursor.getCount()==0){
             result = false;
         }
         else{
-            while(!cursor.isAfterLast()){//because moveToNext returns false if the cursor is already past last entry
-                while(cursor.moveToNext()){
-                    String user = cursor.getString(1);
-                    String pass = cursor.getString(2);
-
-                    if(user.equals(username) && pass.equals(password)){
-                        result = true;
-                        break;
-                    }
+            while(cursor.moveToNext()){
+                String user = cursor.getString(1);
+                String pass = cursor.getString(2);
+                if(user.equals(username) && pass.equals(password)){
+                    result = true;
+                    break;
                 }
             }
             cursor.close();
         }
         return result;
-    }
+    }*/
 }

@@ -93,7 +93,7 @@
                 android:hint="Username"
                 android:fontFamily="sans-serif-condensed"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-
+                android:textStyle="normal"
                 android:textAlignment="center"
 
                 android:layout_weight="2"
@@ -117,9 +117,9 @@
                 android:hint="Password"
                 android:fontFamily="sans-serif-condensed"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-
+                android:textStyle="normal"
                 android:textAlignment="center"
-
+                android:inputType="textPassword"
                 android:layout_weight="2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent">

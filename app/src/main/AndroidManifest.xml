@@ -34,7 +34,8 @@
             android:theme="@style/AppTheme.SlidrActivityTheme">
 
         </activity>
-        <activity android:name=".DoorReg">
+        <activity android:name=".DoorReg"
+            android:screenOrientation="portrait">
 
         </activity>
         <activity

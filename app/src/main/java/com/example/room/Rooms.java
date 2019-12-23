@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import maes.tech.intentanim.CustomIntent;
 
@@ -21,6 +23,18 @@ public class Rooms extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.rooms);
+        Bundle userData = getIntent().getExtras();
+        String user = userData.getString("whoToReceive");
+
+        final TextView welcomeMessage = (TextView) findViewById(R.id.WelcomeUser);
+        welcomeMessage.setText("Welcome "+user+"!");
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                welcomeMessage.setText("Choose a room");
+            }
+        },3000);
 
         roomsListView = (ListView)findViewById(R.id.roomsList);
         roomsListData = getResources().getStringArray(R.array.roomsListArray);
